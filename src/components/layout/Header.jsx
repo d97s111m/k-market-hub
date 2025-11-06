@@ -15,7 +15,7 @@ function Header() {
       <div className="wrap po-rel">
         <div className="header-box po-rel">
           <h1>
-            <a href="#">원주 중앙시장</a>
+            <a href="/marketmaps">원주 중앙시장</a>
           </h1>
           <button
             className={`nav-open-btn ${menuActive ? "active" : ""}`}
