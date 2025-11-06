@@ -1,0 +1,71 @@
+.consumer-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--text-light);
+  box-shadow: 0px 2px 11px -4px #e7e7e7;
+  color: var(--primary-color);
+}
+
+.consumer-header .header-box {
+  display: flex;
+  line-height: 60px;
+  padding-left: 20px;
+}
+
+.consumer-header .nav-open-btn {
+  position: absolute;
+  top: 30%;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.consumer-header .nav-open-btn span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.consumer-header .nav-open-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.consumer-header .nav-open-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.consumer-header .nav-open-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.consumer-header ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--secondary-bg);
+  z-index: 999;
+  transition: 0.5s ease-in-out;
+}
+
+.consumer-header ul.active {
+  max-height: 500px;
+}
+
+.consumer-header ul li {
+  line-height: 3;
+  color: var(--text-primary);
+  border-bottom: solid 1px var(--text-light);
+  text-indent: 1.3rem;
+}
+
+.consumer-header ul li:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,134 @@
+/* StoreList.css */
+
+.store-list-section {
+  background-color: var(--gray-bg);
+  padding: 90px 0 50px;
+}
+
+.store-list-section .upper-tab-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 8px;
+  text-align: center;
+  background: var(--secondary-bg);
+  border-radius: 14px;
+}
+
+.store-list-section .upper-tab-container button {
+  display: inline-block;
+  width: 100%;
+  color: inherit;
+}
+
+.store-list-section .upper-tab-container button.active {
+  font-weight: bold;
+}
+
+.store-list-section .filter-container {
+  margin-top: 20px;
+}
+
+.store-list-section .filter-active-btn {
+  padding: 7px 12px;
+  border-radius: 14px;
+  color: var(--text-light);
+  background: var(--accent-color);
+}
+
+.store-list-section .filter-active-btn i {
+  margin-right: 8px;
+}
+
+.store-list-section .filter-box {
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.store-list-section .filter-box.active {
+  max-height: 500px;
+}
+
+.store-list-section .filter-group {
+  padding: 3px 0;
+  border-bottom: solid 1px var(--border-color);
+}
+
+.store-list-section .filter-group.active {
+  display: block;
+}
+
+.store-list-section .filter-group.inactive {
+  display: none;
+}
+
+.store-list-section .filter-group label {
+  margin-right: 12px;
+}
+
+.store-list-section .filter-group label:last-child {
+  margin-right: 0;
+}
+
+.store-list-section .filter-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.store-list-section .store-list-container {
+  margin-top: 30px;
+}
+
+.store-list-section .store-box {
+  background-color: var(--secondary-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 2px 1px 11px -4px #afafaf;
+}
+
+.store-list-section .store-box:last-child {
+  margin-bottom: 0;
+}
+
+.store-list-section .img-box {
+  aspect-ratio: 100 / 60;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.store-list-section .img-box img {
+  width: 100%;
+}
+
+.store-list-section .store-info-box {
+  padding: 15px;
+}
+
+.store-list-section .category-box span {
+  display: inline-block;
+  font-family: inherit;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.store-list-section .category-box .category-main {
+  background: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.store-list-section .category-box .category-sub {
+  background: var(--accent-bg);
+}
+
+.store-list-section .category-box i {
+  color: var(--primary-color);
+  margin: 0 5px;
+}
+
+.store-list-section .store-list-container .no-results {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
