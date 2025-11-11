@@ -8,6 +8,7 @@ function MarketMap() {
           <p className="sub-font">
             [시장명] 휴무일은 [휴무일]로, 이번달 휴무일은{" "}
             <span className="holiday">7일, 21일</span>입니다.
+            {/* 개발을 통해 휴무일 자동 설정이 필요함 */}
           </p>
         </div>
         <div className="legend-container">

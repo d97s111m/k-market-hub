@@ -1,3 +1,38 @@
 .market-map-section {
   padding: 100px 0 50px;
 }
+
+.market-map-section .legend-container {
+  display: flex;
+}
+
+.market-map-section .legend-container p {
+  display: flex;
+  align-items: center;
+}
+
+.market-map-section .legend-container .color-box {
+  display: inline-block;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+}
+
+.market-map-section .legend-container .legend-name {
+  margin: 0 15px 0 5px;
+}
+
+.color-box.restaurant {
+  background-color: #ce6969;
+}
+
+.color-box.grocery {
+  background-color: #5a8660;
+}
+
+.color-box.haberdashery {
+  background-color: #5c79b9;
+}
+
+.color-box.etc {
+  background-color: #866fbb;
+}
