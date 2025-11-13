@@ -1,6 +1,17 @@
 import "./MarketMap.css";
 
 function MarketMap() {
+  // 임시 지도 데이터를 위한 내용
+  const marketLayout = {
+    sections: {
+      가: 14,
+      나: 10,
+      다: 12,
+      라: 15,
+      마: 12,
+    },
+  };
+
   return (
     <section className="market-map-section">
       <div className="wrap mob">
@@ -30,18 +41,27 @@ function MarketMap() {
           </p>
         </div>
         <div className="market-map-container">
-          <div className="nearby-market"></div>
-          <div className="market-map-box">
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
-            <span className="market-box"></span>
+          <div className="nearby-market">자유시장</div>
+          <div className="map-viewport">
+            <div className="market-map-box">
+              {Object.entries(marketLayout.sections).map(
+                ([sectionName, count]) => (
+                  <div
+                    key={sectionName}
+                    className={`market-section section-${sectionName}`}
+                  >
+                    {Array.from({ length: count }, (_, i) => (
+                      <div
+                        key={`${sectionName}-${i + 1}`}
+                        className="market-box"
+                      >
+                        {sectionName}-{i + 1}
+                      </div>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
