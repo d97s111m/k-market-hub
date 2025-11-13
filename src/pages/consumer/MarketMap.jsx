@@ -1,6 +1,11 @@
 import "./MarketMap.css";
+import { useState, useEffect } from "react";
+import { getStoreList, getCategories } from "../../utils/api";
 
 function MarketMap() {
+  const [stores, setStores] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   // 임시 지도 데이터를 위한 내용
   const marketLayout = {
     sections: {
@@ -11,6 +16,39 @@ function MarketMap() {
       마: 12,
     },
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [storeData, categoryData] = await Promise.all([
+          getStoreList(),
+          getCategories(),
+        ]);
+        setStores(storeData);
+        setCategories(categoryData);
+      } catch (error) {
+        console.error("데이터 로드 실패:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 상점 정보 매칭
+  const getStoreInfo = (section, num) => {
+    return stores.find(
+      (store) => store.storeSection === section && store.storeNum === num
+    );
+  };
+
+  // 카테고리 정보 매칭
+  const getCategoryInfo = (categoryId) => {
+    return categories.find((cat) => cat.sortId === categoryId);
+  };
+
+  if (loading) return <div>지도 로딩중...</div>;
 
   return (
     <section className="market-map-section">
@@ -24,19 +62,19 @@ function MarketMap() {
         </div>
         <div className="legend-container">
           <p>
-            <span className="color-box restaurant"></span>
+            <span className="color-box 음식"></span>
             <span className="legend-name">음식</span>
           </p>
           <p>
-            <span className="color-box grocery"></span>
+            <span className="color-box 식자재"></span>
             <span className="legend-name">식자재</span>
           </p>
           <p>
-            <span className="color-box haberdashery"></span>
+            <span className="color-box 잡화"></span>
             <span className="legend-name">잡화</span>
           </p>
           <p>
-            <span className="color-box etc"></span>
+            <span className="color-box 기타"></span>
             <span className="legend-name">기타</span>
           </p>
         </div>
@@ -50,14 +88,38 @@ function MarketMap() {
                     key={sectionName}
                     className={`market-section section-${sectionName}`}
                   >
-                    {Array.from({ length: count }, (_, i) => (
-                      <div
-                        key={`${sectionName}-${i + 1}`}
-                        className="market-box"
-                      >
-                        {sectionName}-{i + 1}
-                      </div>
-                    ))}
+                    {Array.from({ length: count }, (_, i) => {
+                      const storeInfo = getStoreInfo(sectionName, i + 1);
+                      const categoryInfo = storeInfo
+                        ? getCategoryInfo(storeInfo.categoryId)
+                        : null;
+
+                      return (
+                        <div
+                          key={`${sectionName}-${i + 1}`}
+                          className={`market-box ${
+                            categoryInfo ? categoryInfo.mainCategory : "empty"
+                          }`}
+                        >
+                          {storeInfo ? (
+                            <>
+                              <p className="block-number">
+                                {sectionName}-{i + 1}
+                              </p>
+                              <p className="category-icon">
+                                {categoryInfo?.icon}
+                              </p>
+
+                              <p className="store-name">
+                                {storeInfo.storeName}
+                              </p>
+                            </>
+                          ) : (
+                            `${sectionName}-${i + 1}`
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 )
               )}
