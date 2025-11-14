@@ -169,8 +169,8 @@ function StoreDetail() {
               )}
             </div>
             <ul className="sns-link-box">
-              {storeData.snsLinkList
-                ?.filter((link) => link.trim())
+              {(storeData.snsLinkList || []) // 빈 배열로 기본값 설정
+                .filter((link) => link && link.trim()) // link 존재 여부도 체크
                 .map((snsUrl, index) => {
                   const snsInfo = getSNSInfo(snsUrl);
                   return (

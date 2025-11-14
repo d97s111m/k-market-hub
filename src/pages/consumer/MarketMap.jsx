@@ -1,11 +1,14 @@
 import "./MarketMap.css";
 import { useState, useEffect } from "react";
 import { getStoreList, getCategories } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 
 function MarketMap() {
   const [stores, setStores] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
   // 임시 지도 데이터를 위한 내용
   const marketLayout = {
     sections: {
@@ -46,6 +49,13 @@ function MarketMap() {
   // 카테고리 정보 매칭
   const getCategoryInfo = (categoryId) => {
     return categories.find((cat) => cat.sortId === categoryId);
+  };
+
+  // 상점 클릭 핸들러
+  const handleStoreClick = (storeInfo) => {
+    if (storeInfo) {
+      navigate(`/stores/${storeInfo.id}`);
+    }
   };
 
   if (loading) return <div>지도 로딩중...</div>;
@@ -99,19 +109,20 @@ function MarketMap() {
                           key={`${sectionName}-${i + 1}`}
                           className={`market-box ${
                             categoryInfo ? categoryInfo.mainCategory : "empty"
-                          }`}
+                          } ${storeInfo ? "clickable" : ""}`}
+                          onClick={() => handleStoreClick(storeInfo)}
+                          style={{ cursor: storeInfo ? "pointer" : "default" }}
                         >
                           {storeInfo ? (
                             <>
-                              <p className="block-number">
-                                {sectionName}-{i + 1}
-                              </p>
                               <p className="category-icon">
                                 {categoryInfo?.icon}
                               </p>
-
                               <p className="store-name">
                                 {storeInfo.storeName}
+                              </p>
+                              <p className="block-number">
+                                {sectionName}-{i + 1}
                               </p>
                             </>
                           ) : (
