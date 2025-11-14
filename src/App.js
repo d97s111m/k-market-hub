@@ -55,7 +55,7 @@ function AppContent() {
               <section className="demo-section">
                 <h2>데모 체험하기</h2>
                 <div className="demo-buttons">
-                  <Link to="/stores" className="demo-btn consumer">
+                  <Link to="/marketmap" className="demo-btn consumer">
                     <span className="btn-icon">🛒</span>
                     <span className="btn-text">소비자 페이지</span>
                     <span className="btn-desc">
