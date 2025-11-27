@@ -1,70 +1,225 @@
-# Getting Started with Create React App
+# K-Market Hub (전통시장 통신망)
+> 전통시장 활성화를 위한 웹사이트 제안
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 목차
+- [🎯 개요](#-개요)
+- [🔧 문제점 및 개선방안](#-문제점-및-개선방안)
+- [👥 사용자 유형별 기능](#-사용자-유형별-기능)
+- [💰 비즈니스 모델](#-비즈니스-모델)
+- [📈 기대 효과](#-기대-효과)
+- [🎨 UX/UI 키워드](#-uxui-키워드)
+- [🏗️ 운영 구조](#️-운영-구조-및-지속-가능성)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 개요
 
-### `npm start`
+### 배경
+2012년 대형마트 의무휴업 조항 신설 및 지역 내 경제 순환을 위해 지역 화폐 및 상품권 사업에 투자하였음에도 불구하고 실질적인 소비자 유입은 이루어지지 않았으며, 오히려 전통시장에 대한 부정적 인식만 심화되었습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**당시 주요 문제점들:**
+- ❌ 정가제/정량제 미운영
+- ❌ 원산지 정보 부재  
+- ❌ 상품 품질에 대한 낮은 신뢰도
+- ❌ 교환/환불의 어려움
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 목적
+전통시장의 디지털 경쟁력 강화를 위한 웹사이트 구축 및 사용자 중심 서비스 제공
 
-### `npm test`
+| 대상 | 목적 |
+|------|------|
+| **소비자** | 직관적이고 신뢰성 높은 시장 정보 제공으로 긍정적 이미지 형성 |
+| **상인** | 별도 기술 지식 없이도 손쉬운 가게 정보 관리 및 새로운 홍보 채널 제공 |
+| **관리자** | 효율적인 운영과 관리가 가능한 시스템으로 전체 시장 운영 효율성 향상 |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🔧 문제점 및 개선방안
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📍 문제점 1. 전통시장에 대한 정보 접근성의 한계
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**현재 상황:**
+- 대부분 전통시장은 홈페이지가 없거나 몇 년 이상 업데이트되지 않은 상태
+- 소비자에게 실질적으로 필요한 정보 부재 (가게 이름과 사용하기 불편한 지도뿐)
+- 상인이 직접 정보 수정에 참여할 수 있는 시스템 없음
+  
+**💡 개선방안: 상인 참여형 정보 관리 시스템 구축**
+- ✅ 상인이 직접 자신의 가게 정보를 등록, 수정할 수 있는 참여형 정보 시스템 도입
+- ✅ 지자체/상인회는 승인 역할만 수행하며, 정보의 신뢰성과 최신성 유지
+- ✅ 소비자 중심 정보 구조로 재편하여 정보 탐색 효율 향상
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 📍 문제점 2. 낮은 디지털 경험과 진입 장벽
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**현재 상황:**
+- 디지털 경험이 낮은 연령대의 상인과 소비자의 기기 이용 불편함
+- 웹사이트의 이용 저하 및 정보 방치 가능성
+  
+**💡 개선방안: 모바일 최적화 및 UX를 고려한 직관적인 UI**
+- ✅ 모바일 최적화를 통해 어디서든 손쉽게 웹사이트 확인 및 수정 가능
+- ✅ 다양한 연령대 사용자를 고려하여 직관적인 UI 제공, 복잡한 기능 최소화
+- ✅ 각 기능 설명 및 페이지 설명을 문장형으로 제공하여 친근감 조성
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📍 문제점 3. 전통시장 지도 구조의 불규칙성과 시각적 혼란
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**현재 상황:**
+- 오랜 시간에 걸쳐 자연스럽게 확장되어 구역 구성 방식과 번호 체계에 일관성 부재
+- 같은 시장 내에서도 기준이 제각각으로 지도 사용 어려움
 
-## Learn More
+**💡 개선방안: 시각 정보 표준화를 통한 직관적 지도 설계**
+- ✅ 최소 단위를 기준으로 호수 부여, 블록 내 통일된 번호 체계 적용
+- ✅ 지도에서는 컬러와 아이콘을 활용하여 시각적으로 정보를 쉽게 얻을 수 있도록 설계
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 👥 사용자 유형별 기능
 
-### Code Splitting
+### 🛒 소비자
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 타겟 유저
+🎯 핵심 타겟: 지역 거주민 (30~60대 중장년층)
+- 지역에 익숙하며 전통시장에 큰 거부감이 없음
+- 식사 준비 등 일상적인 생활을 위한 지속적 소비 가능
 
-### Analyzing the Bundle Size
+🌟 확장 타겟
+- 여행을 목적으로 방문한 관광객 (내/외국인)
+  - 문화 체험에 긍정적, 다양한 상품군에 열린 소비
+- SNS를 이용하는 젊은 세대
+- 인터넷 내 영향도가 높아 자연스러운 마케팅 확산
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### 제공 항목
+- 📍 시장 지도, 가게 목록, 가게별 페이지
+- 🅿️ 시장 휴업일, 인근 주차장 정보
+- 📢 행사 정보
 
-### Making a Progressive Web App
+### 🏪 상인
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### 특징
+연령대와 디지털 숙련도가 각기 다름. 복잡한 시스템에는 진입 장벽을 느낄 수 있어 **단순한 정보 입력 중심의 구조**로 설계
 
-### Advanced Configuration
+#### 제공 항목
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**🔴 필수사항**
+- 🔐 비밀번호 변경
+- 📋 가게 기본 정보 등록
+  - 사진 (대표 1장, 추가 4장)
+  - 가게명, 연락처, 판매 상품
+  - 교환/환불 방법, 결제 수단
 
-### Deployment
+**🔵 선택사항**  
+- 📝 글자만 입력 가능한 자유 영역
+- 🔗 외부 링크 연결
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### ⚙️ 관리자 (지자체 및 상인회)
 
-### `npm run build` fails to minify
+#### 역할
+초반에는 시장 지도 설계라는 비교적 복잡한 과제가 있으나, **한번 설계 완료 후에는 간소화된 방식으로 운영 가능**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### 제공 항목
+
+**🟡 초반 설정 필수사항**
+- 🔒 관리자 보안 비밀번호 설정
+- 🗺️ 시장 지도 설계  
+- ✅ 상인 최초 가게 정보 등록 허가
+- 🅿️ 인근 주차장 정보 입력
+
+**🟢 추후 운영 필수사항**
+- 🔄 상인 요청 시 가게 정보 초기화
+- 🔐 관리자 구성 변경 시 보안 비밀번호 변경
+- 📊 로그 확인 (자동기록으로 확인만)
+
+**🔵 선택사항**
+- 📢 공지사항, 시장 소식 등 글 업데이트
+
+---
+
+## 💰 비즈니스 모델
+
+### 지역 기반 광고 구좌 운영
+
+지역 기반 광고 구좌를 마련하여 **전통시장 내부 상인뿐 아니라, 해당 지역 내 상인**(단, 프렌차이즈 제외)**도 저렴한 비용으로 광고를 게재**할 수 있도록 합니다.
+
+#### 💡 수익 구조
+광고 수익 → 웹사이트 운영비 보조 → 지역 상권 간 상생 효과
+
+#### 🎯 기대 효과
+- ✅ 웹사이트 운영 비용 자체 충당으로 **지속가능한 운영**
+- ✅ 지역 상권 전체의 **상생 효과** 창출
+- ✅ 초기 목적인 **지역 내 소비 순환 구조 복원**과 연결
+
+---
+
+## 📈 기대 효과
+
+### 🌍 지역 경제
+- **젊은 소비자층 유입 증가**: 전통시장 가게 정보 온라인 검색 가능
+- **지역 소비 순환 촉진**: 인근 지역 정보 제공으로 사용자 편의성 향상, 방문 유도
+- **시장 유입 범위 확대**: 지역 거주민 중심 → 여행객 등 외부 소비자로 확장하여 전국 단위로 확대
+- **지역 상권 자생력 강화**: 지역 내 소비 순환 활성화
+
+### 🤝 사회적 신뢰  
+- **상품 및 상인 신뢰도 향상**: 정가제, 정량제, 결제 수단, 교환/환불 방식 등을 투명하게 제공
+- **소비자 신뢰 확보**: 민간 플랫폼이 아닌 공공 기반 웹페이지 운영을 통해 과장 없는 정보 제공과 장기적 정보 유지
+
+### 🔄 디지털 취약 계층 포용
+- **새로운 고객 유치 기회**: SNS, 배달 플랫폼과 거리가 멀었던 전통시장 상인들에게 손쉬운 정보 입력과 관리 기능 제공
+- **기술 격차 해소**: 디지털 소외 계층에 대한 접근성 개선
+
+### ♻️ 지속 가능한 운영
+- **지속적인 정보 갱신**: 상인 주도의 자발적 참여와 연동
+- **운영 부담 최소화**: 실제 상인의 의도와 현실을 반영한 업데이트 가능
+
+---
+
+## 🎨 UX/UI 키워드
+
+### 🎯 Simple (간단한, 복잡하지 않은)
+- 불필요한 시각 요소와 과도한 정보를 줄인 **간결한 레이아웃**
+- 가게 정보, 주차장, 시장 공지 등 주요 콘텐츠는 **최소한의 클릭으로 접근** 가능
+
+### 🧠 Intuitive (직관적, 이해하기 쉬운)  
+- 시장 지도를 중심으로 **카테고리별 컬러와 이모지 아이콘**을 활용해 한눈에 정보 파악 가능
+- **친한국어 중심의 용어 체계**로 연령대에 상관없이 쉽게 이해할 수 있는 정보 제공
+
+### 🌐 Web-based, No App Required (비설치형 웹 접근성)
+- 별도의 **앱 설치 없이** 웹 브라우저에서 바로 이용 가능  
+- **검색, QR코드 스캔** 등의 다양한 진입 경로 확보
+
+### 📍 Location-based (현장 기반 정보 제공 특화)
+- **시장 휴무일 안내**: 시장 지도 상단에 가장 먼저 노출되는 정보
+- **인근 주차장 정보**: 운영 시간, 위치, 할인 방법 등
+- **시장 내 알림 게시판**: 행사, 공지사항 등  
+- **인근 시장 지도로 연결**: 상하좌우 방향에 맞춰 시장명 노출
+
+---
+
+## 🏗️ 운영 구조 및 지속 가능성
+
+본 프로젝트는 **가볍고 최적화된 웹 환경**을 기반으로, 필요한 정보를 간결하게 전달하는 것을 목표로 설계되었습니다.
+
+### 🎯 핵심 설계 원칙
+
+#### 💡 현실 고려한 설계
+- **운영 인력이 적은 전통시장과 지자체 현실** 고려
+- 관리자와 상인이 웹사이트를 **쉽게 유지·관리**할 수 있는 구조
+- **복잡한 회원가입, 댓글, 커뮤니티 기능 제외**하고 필수 정보 중심 구성
+
+#### 🔄 접근성 우선
+- **디지털 소외 계층인 고령층 상인**도 활용 가능한 직관적 UI
+- 입력 단계 최소화 및 **설명형 UI** 제공
+
+### 🚀 지속 가능성
+
+| 요소 | 설명 |
+|------|------|
+| **경량화된 시스템** | 이미지와 데이터는 웹용으로 자동 변환, 낮은 유지 비용 |
+| **소수 인력 기반 운영** | 복잡한 관리 기능 최소화로 적은 인력으로도 운영 가능 |  
+| **사용자 친화적 설계** | 자발적 참여 유도로 지속적인 정보 업데이트 |
+| **단계적 확장 구조** | 초기 구축 후 점진적 기능 확장 가능 |
+
+---
+
+
+### 🌟 전통시장과 지역 경제의 디지털 전환을 통한 상생 플랫폼
+
