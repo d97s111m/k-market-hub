@@ -74,7 +74,7 @@ function Parkinginfo() {
           </div>
           <div className="parking-card-container">
             {filteredList.map((parking) => (
-              <div className="parking-card">
+              <div key={parking.id} className="parking-card">
                 <div className="parking-title-box">
                   <span
                     className={`parking-type sub-font ${parking.parkingType}`}
