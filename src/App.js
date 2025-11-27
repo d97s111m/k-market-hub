@@ -10,6 +10,7 @@ import StoreList from "./pages/consumer/StoreList";
 import StoreDetail from "./pages/consumer/StoreDetail";
 import Header from "./components/layout/Header";
 import MarketMap from "./pages/consumer/MarketMap";
+import Parkinginfo from "./pages/consumer/ParkingInfo";
 
 function AppContent() {
   const location = useLocation();
@@ -17,7 +18,11 @@ function AppContent() {
   const getHeaderType = (pathname) => {
     if (pathname.startsWith("/admin")) return "admin";
     if (pathname.startsWith("/merchant")) return "merchant";
-    if (pathname.startsWith("/store") || pathname.startsWith("/marketmap"))
+    if (
+      pathname.startsWith("/store") ||
+      pathname.startsWith("/marketmap") ||
+      pathname.startsWith("/parkinginfo")
+    )
       return "consumer";
     return null;
   };
@@ -84,6 +89,7 @@ function AppContent() {
         <Route path="/marketmap" element={<MarketMap />} />
         <Route path="/stores" element={<StoreList />} />
         <Route path="/stores/:id" element={<StoreDetail />} />
+        <Route path="/parkinginfo" element={<Parkinginfo />} />
       </Routes>
 
       <footer className="main-footer">

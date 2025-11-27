@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./Header.css";
 
@@ -7,6 +7,10 @@ function Header() {
 
   const toggleMenu = () => {
     SetMenuActive(!menuActive);
+  };
+
+  const closeMenu = () => {
+    SetMenuActive(false);
   };
 
   return (
@@ -29,12 +33,20 @@ function Header() {
         <ul className={menuActive ? "active" : ""}>
           <li>전국 시장 보기</li>
           <li>
-            <a href="/marketmap">시장 지도</a>
+            <Link to="/marketmap" onClick={closeMenu}>
+              시장 지도
+            </Link>
           </li>
           <li>
-            <a href="/stores">상가 목록</a>
+            <Link to="/stores" onClick={closeMenu}>
+              상가 목록
+            </Link>
           </li>
-          <li>주차장 정보</li>
+          <li>
+            <Link to="/parkinginfo" onClick={closeMenu}>
+              주차장 정보
+            </Link>
+          </li>
           <li>공지사항</li>
         </ul>
       </div>

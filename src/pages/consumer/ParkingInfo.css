@@ -1,0 +1,86 @@
+.parking-info-section .parking-container .tab-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--secondary-bg);
+  padding: 10px 0;
+  border-radius: 16px;
+}
+
+.parking-info-section .tab-container span {
+  display: inline-block;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.parking-info-section .tab-container .active {
+  font-weight: bold;
+}
+
+.parking-info-section .parking-card-container {
+  margin-top: 20px;
+}
+
+.parking-info-section .parking-card-container .parking-card {
+  background-color: var(--gray-bg);
+  padding: 15px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.parking-info-section .parking-card-container .parking-card:last-child {
+  margin-bottom: 0;
+}
+
+.parking-info-section .parking-title-box .parking-type {
+  display: inline-block;
+  background-color: var(--primary-color);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  padding: 3px 8px;
+  border-radius: 14px;
+}
+
+.parking-info-section .parking-title-box .parking-type.민영 {
+  background-color: var(--accent-bg);
+}
+
+.parking-info-section .parking-title-box .parking-name {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.parking-info-section .parking-info-box .address-box {
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.parking-info-section .parking-info-box i {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: inherit;
+  color: var(--text-secondary);
+  margin: 0 5px;
+}
+
+.parking-info-section .parking-info-box .daily-max-rate {
+  margin-left: 5px;
+}
+
+.parking-info-section .parking-info-box .tag-box {
+  margin-top: 5px;
+}
+
+.parking-info-section .parking-info-box .tag-box span {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  padding: 3px 8px;
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+}
+
+.parking-info-section .parking-info-box .tag-box span:last-child {
+  margin-right: 0;
+}

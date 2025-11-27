@@ -18,6 +18,7 @@ const parseSheetData = (rawData) => {
         header.endsWith("Id") ||
         header.endsWith("Amount") ||
         header.endsWith("Num") ||
+        header.endsWith("Rate") ||
         header.endsWith("Time");
 
       // 2. 배열 변환

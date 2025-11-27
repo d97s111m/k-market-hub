@@ -205,9 +205,17 @@ footer {
   margin: 5px 0;
 }
 
+section {
+  padding: 100px 0 50px;
+}
+
 /* position */
 .po-rel {
   position: relative;
+}
+
+.flex-box {
+  display: flex;
 }
 
 /* 브레이크 포인트 */
